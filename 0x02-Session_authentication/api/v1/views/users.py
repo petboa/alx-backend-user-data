@@ -2,10 +2,11 @@
 """Module of Users views.
 """
 from api.v1.views.users import app_views
-from flask import abort, jsonify, request
+from flask import abort, jsonify, request, blueprint
 from models.user import User
 
 
+app_views = Blueprint('users', __name__, url_prefix='/api/v1/users')
 @app_views.route('/users', methods=['GET'], strict_slashes=False)
 def view_all_users() -> str:
     """GET /api/v1/users
