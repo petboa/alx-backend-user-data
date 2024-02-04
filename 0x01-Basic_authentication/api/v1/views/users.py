@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Module of Users views."""
-
-from api.v1.views.users import app_views
+"""Module of Users views.
+"""
+from api.v1.views import app_views
 from flask import abort, jsonify, request
 from models.user import User
 
@@ -120,4 +120,3 @@ def update_user(user_id: str = None) -> str:
         user.last_name = rj.get('last_name')
     user.save()
     return jsonify(user.to_json()), 200
-    
