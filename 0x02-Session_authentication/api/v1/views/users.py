@@ -2,7 +2,6 @@
 """ RestFul API actions for Users """
 from models.user import User
 from flask import abort, jsonify, request, make_response
-from models import storage
 
 
 @app_views.route('/users', methods=['GET'], strict_slashes=False)
